@@ -1,13 +1,15 @@
-/* SUPPORT POPUP */
-const supportBtn=document.getElementById("supportBtn");
-const supportPopup=document.getElementById("supportPopup");
+const supportBtn = document.getElementById("supportBtn");
+const supportPopup = document.getElementById("supportPopup");
 
-supportBtn.onclick=()=>{
-supportPopup.classList.toggle("show");
-};
+supportBtn.addEventListener("click", e => {
+  e.stopPropagation(); // 🔥 VIGTIG
+  supportPopup.classList.toggle("show");
+});
 
-document.addEventListener("click",e=>{
-if(!supportBtn.contains(e.target) && !supportPopup.contains(e.target)){
-supportPopup.classList.remove("show");
-}
+supportPopup.addEventListener("click", e => {
+  e.stopPropagation(); // så klik inde i popup ikke lukker den
+});
+
+document.addEventListener("click", () => {
+  supportPopup.classList.remove("show");
 });
