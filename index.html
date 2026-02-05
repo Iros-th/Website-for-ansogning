@@ -3,197 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iros Raj Thapa | Professional Web Developer</title>
+<title>Iros Raj Thapa | Web Developer</title>
 
-<!-- THREE.JS -->
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- THREE JS -->
 <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#020617;color:white;overflow-x:hidden}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{background:#f5f7fa;color:#111;line-height:1.6}
+
+/* NAV */
+nav{
+position:fixed;top:0;width:100%;
+background:white;border-bottom:1px solid #eee;
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 40px;z-index:1000
+}
+nav a{text-decoration:none;color:#111;margin-left:20px;font-weight:600}
 
 /* HERO */
 .hero{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background:linear-gradient(135deg,#2563eb,#9333ea,#0ea5e9);
+height:100vh;
+background:url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") center/cover no-repeat;
+display:flex;align-items:center;justify-content:center;text-align:center;color:white
 }
 .hero h1{font-size:3rem}
-.hero p{opacity:.9;margin-top:10px}
+.hero p{margin-top:10px;font-size:1.2rem}
 
 /* SECTIONS */
-section{padding:80px 20px;max-width:1100px;margin:auto}
+section{padding:90px 40px;max-width:1200px;margin:auto}
 h2{margin-bottom:20px}
 
-/* CARDS */
+/* GRID */
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px
 }
+
+/* CARD */
 .card{
-  background:#0f172a;
-  padding:20px;
-  border-radius:12px;
-  transition:.3s;
+background:white;border-radius:10px;overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.06)
 }
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 15px 40px rgba(0,0,0,.5);
-}
+.card img{width:100%;height:200px;object-fit:cover}
+.card div{padding:20px}
 
-/* SKILLS */
-.skills span{
-  display:inline-block;
-  background:#1e293b;
-  padding:8px 14px;
-  border-radius:6px;
-  margin:6px;
-}
-
-/* BUTTON */
-button{
-  background:#2563eb;
-  border:none;
-  color:white;
-  padding:12px 20px;
-  border-radius:6px;
-  cursor:pointer;
-}
-button:hover{background:#1d4ed8}
+/* SERVICES */
+.service{padding:20px;background:white;border-radius:10px;box-shadow:0 6px 15px rgba(0,0,0,.05)}
 
 /* 3D */
-#threeCanvas{
-  width:100%;
-  height:400px;
-  border-radius:12px;
-  margin-top:20px;
+#viewer{width:100%;height:420px;border-radius:10px}
+
+/* CONTACT */
+button{
+background:#111;color:white;border:none;
+padding:14px 24px;border-radius:6px;cursor:pointer
 }
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  background:#020617;
-  opacity:.7;
-}
+footer{text-align:center;padding:30px;background:#111;color:white;margin-top:40px}
 </style>
 </head>
 
 <body>
 
+<nav>
+<b>Iros</b>
+<div>
+<a href="#about">Om mig</a>
+<a href="#projects">Projekter</a>
+<a href="#services">Services</a>
+<a href="#contact">Kontakt</a>
+</div>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
-  <div>
-    <h1>Iros Raj Thapa</h1>
-    <p>Professional Web Developer • Visual • 3D Web</p>
-  </div>
+<div>
+<h1>Professional Web Developer</h1>
+<p>Jeg bygger moderne, professionelle og visuelt stærke websites</p>
+</div>
 </div>
 
-<!-- WHY ME -->
-<section>
-<h2>Hvorfor vælge mig</h2>
+<!-- ABOUT -->
+<section id="about">
+<h2>Om mig</h2>
+<p>
+Jeg udvikler professionelle hjemmesider med fokus på design, performance og brugeroplevelse.
+Jeg har lavet mange website-projekter gennem min skoletid og kodningskurser, og jeg bygger komplette løsninger fra bunden — fra idé til færdigt produkt.
+</p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+<h2>Projekter</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Flotte Visuals</h3>
-<p>Jeg bygger moderne hjemmesider med premium design, animationer og stærk visuel præsentation.</p>
+<img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
+<div>
+<h3>Portfolio Website</h3>
+<p>Moderne hjemmeside med animationer og professionelt design.</p>
+</div>
 </div>
 
 <div class="card">
-<h3>3D Integration</h3>
-<p>Jeg kan integrere 3D figurer, interaktive modeller og avancerede visuals direkte i jeres website.</p>
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
+<div>
+<h3>Web Application</h3>
+<p>Interaktiv web app med avanceret funktionalitet.</p>
+</div>
 </div>
 
 <div class="card">
-<h3>Komplet Webudvikling</h3>
-<p>Fra design til funktionalitet — jeg bygger komplette, hurtige og professionelle hjemmesider.</p>
+<img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8">
+<div>
+<h3>UI/UX Design</h3>
+<p>Brugerfokuseret design med moderne visuals.</p>
+</div>
 </div>
 
 </div>
 </section>
 
-<!-- 3D DEMO -->
+<!-- SERVICES -->
+<section id="services">
+<h2>Hvad jeg kan lave for jer</h2>
+
+<div class="grid">
+
+<div class="service">
+<h3>Professionelle Websites</h3>
+<p>Hurtige, moderne og responsive hjemmesider.</p>
+</div>
+
+<div class="service">
+<h3>Flotte Visuals</h3>
+<p>Premium design, animationer og stærk visuel præsentation.</p>
+</div>
+
+<div class="service">
+<h3>3D Integration</h3>
+<p>3D modeller, interaktive visuals og product viewers.</p>
+</div>
+
+</div>
+</section>
+
+<!-- 3D VIEWER -->
 <section>
 <h2>3D Demo</h2>
-<p>Eksempel på 3D integration i website:</p>
-<div id="threeCanvas"></div>
-</section>
-
-<!-- PORTFOLIO -->
-<section>
-<h2>Portfolio</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Portfolio Website</h3>
-<p>Personlig hjemmeside med animationer og moderne UI.</p>
-</div>
-
-<div class="card">
-<h3>Web App</h3>
-<p>Interaktiv webapplikation med JavaScript funktioner.</p>
-</div>
-
-<div class="card">
-<h3>Visual Design</h3>
-<p>Fokus på UI/UX og professionel brugeroplevelse.</p>
-</div>
-
-</div>
-</section>
-
-<!-- SKILLS -->
-<section>
-<h2>Skills</h2>
-<div class="skills">
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>Three.js</span>
-<span>Responsive Design</span>
-<span>UI/UX</span>
-<span>Performance</span>
-<span>Git/GitHub</span>
-</div>
+<div id="viewer"></div>
 </section>
 
 <!-- CONTACT -->
-<section>
+<section id="contact">
 <h2>Kontakt</h2>
 <p>Klar til at bygge jeres næste hjemmeside.</p>
 <button onclick="alert('Kontakt: Iros Raj Thapa')">Kontakt mig</button>
 </section>
 
 <footer>
-© 2026 Iros Raj Thapa — Professional Web Developer
+© 2026 Iros Raj Thapa — Web Developer
 </footer>
 
-<!-- THREE JS SCRIPT -->
 <script>
 const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(75,window.innerWidth/400,0.1,1000);
+const camera=new THREE.PerspectiveCamera(75,window.innerWidth/420,0.1,1000);
 const renderer=new THREE.WebGLRenderer({antialias:true});
-renderer.setSize(document.getElementById("threeCanvas").clientWidth,400);
-document.getElementById("threeCanvas").appendChild(renderer.domElement);
+renderer.setSize(document.getElementById("viewer").clientWidth,420);
+document.getElementById("viewer").appendChild(renderer.domElement);
 
-const geometry=new THREE.BoxGeometry();
-const material=new THREE.MeshNormalMaterial();
-const cube=new THREE.Mesh(geometry,material);
+const light=new THREE.HemisphereLight(0xffffff,0x444444,1);
+scene.add(light);
+
+camera.position.set(0,1.5,3);
+
+const loader=new THREE.GLTFLoader();
+loader.load("model.glb",gltf=>{
+scene.add(gltf.scene);
+},undefined,()=>{
+
+/* fallback cube */
+const geo=new THREE.BoxGeometry();
+const mat=new THREE.MeshNormalMaterial();
+const cube=new THREE.Mesh(geo,mat);
 scene.add(cube);
 
-camera.position.z=3;
+function spin(){
+cube.rotation.x+=0.01;
+cube.rotation.y+=0.01;
+requestAnimationFrame(spin);
+renderer.render(scene,camera);
+}
+spin();
+return;
+});
 
 function animate(){
-  requestAnimationFrame(animate);
-  cube.rotation.x+=0.01;
-  cube.rotation.y+=0.01;
-  renderer.render(scene,camera);
+requestAnimationFrame(animate);
+renderer.render(scene,camera);
 }
 animate();
 </script>
