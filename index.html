@@ -5,25 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Iros Raj Thapa | Web Developer</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- THREE JS -->
-<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
-body{background:#f5f7fa;color:#111;line-height:1.6}
+html{scroll-behavior:smooth}
+body{background:#f4f6f8;color:#111}
 
 /* NAV */
 nav{
 position:fixed;top:0;width:100%;
 background:white;border-bottom:1px solid #eee;
 display:flex;justify-content:space-between;align-items:center;
-padding:15px 40px;z-index:1000
+padding:16px 50px;z-index:1000
 }
-nav a{text-decoration:none;color:#111;margin-left:20px;font-weight:600}
+nav a{text-decoration:none;color:#111;margin-left:25px;font-weight:600}
 
 /* HERO */
 .hero{
@@ -32,41 +28,47 @@ background:url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") c
 display:flex;align-items:center;justify-content:center;text-align:center;color:white
 }
 .hero h1{font-size:3rem}
-.hero p{margin-top:10px;font-size:1.2rem}
+.hero p{margin-top:12px;font-size:1.2rem}
 
 /* SECTIONS */
-section{padding:90px 40px;max-width:1200px;margin:auto}
-h2{margin-bottom:20px}
+section{padding:100px 50px;max-width:1200px;margin:auto}
+h2{margin-bottom:20px;font-size:1.8rem}
 
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px
 }
 
-/* CARD */
+/* CARDS */
 .card{
-background:white;border-radius:10px;overflow:hidden;
-box-shadow:0 8px 20px rgba(0,0,0,.06)
+background:white;border-radius:12px;overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+transform:translateY(40px);opacity:0;
+transition:all .8s ease
 }
+.card.show{transform:translateY(0);opacity:1}
 .card img{width:100%;height:200px;object-fit:cover}
 .card div{padding:20px}
 
 /* SERVICES */
-.service{padding:20px;background:white;border-radius:10px;box-shadow:0 6px 15px rgba(0,0,0,.05)}
+.service{
+background:white;padding:25px;border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,.05);
+transform:translateY(40px);opacity:0;
+transition:all .8s ease
+}
+.service.show{transform:translateY(0);opacity:1}
 
-/* 3D */
-#viewer{width:100%;height:420px;border-radius:10px}
-
-/* CONTACT */
+/* BUTTON */
 button{
 background:#111;color:white;border:none;
-padding:14px 24px;border-radius:6px;cursor:pointer
+padding:14px 26px;border-radius:6px;cursor:pointer
 }
 
 /* FOOTER */
-footer{text-align:center;padding:30px;background:#111;color:white;margin-top:40px}
+footer{text-align:center;padding:35px;background:#111;color:white;margin-top:60px}
 </style>
 </head>
 
@@ -75,7 +77,7 @@ footer{text-align:center;padding:30px;background:#111;color:white;margin-top:40p
 <nav>
 <b>Iros</b>
 <div>
-<a href="#about">Om mig</a>
+<a href="#about">Om</a>
 <a href="#projects">Projekter</a>
 <a href="#services">Services</a>
 <a href="#contact">Kontakt</a>
@@ -86,7 +88,7 @@ footer{text-align:center;padding:30px;background:#111;color:white;margin-top:40p
 <div class="hero">
 <div>
 <h1>Professional Web Developer</h1>
-<p>Jeg bygger moderne, professionelle og visuelt stærke websites</p>
+<p>Moderne • Hurtige • Professionelle hjemmesider</p>
 </div>
 </div>
 
@@ -94,38 +96,39 @@ footer{text-align:center;padding:30px;background:#111;color:white;margin-top:40p
 <section id="about">
 <h2>Om mig</h2>
 <p>
-Jeg udvikler professionelle hjemmesider med fokus på design, performance og brugeroplevelse.
-Jeg har lavet mange website-projekter gennem min skoletid og kodningskurser, og jeg bygger komplette løsninger fra bunden — fra idé til færdigt produkt.
+Jeg bygger moderne, professionelle og visuelt stærke hjemmesider med fokus på design,
+performance og brugeroplevelse. Jeg har udviklet mange website-projekter gennem min skoletid
+og kodningskurser og kan bygge komplette løsninger fra idé til færdigt produkt.
 </p>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-<h2>Projekter</h2>
+<h2>Udvalgte Projekter</h2>
 
 <div class="grid">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
 <div>
-<h3>Portfolio Website</h3>
-<p>Moderne hjemmeside med animationer og professionelt design.</p>
+<h3>Business Website Platform</h3>
+<p>Professionel virksomhedshjemmeside med moderne design og stærk performance.</p>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
 <div>
-<h3>Web Application</h3>
-<p>Interaktiv web app med avanceret funktionalitet.</p>
+<h3>Interactive Web Application</h3>
+<p>Web app med dynamisk funktionalitet og brugervenlig struktur.</p>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8">
 <div>
-<h3>UI/UX Design</h3>
-<p>Brugerfokuseret design med moderne visuals.</p>
+<h3>Modern UI/UX System</h3>
+<p>Brugerfokuseret design med professionelle visuals og god brugeroplevelse.</p>
 </div>
 </div>
 
@@ -140,26 +143,20 @@ Jeg har lavet mange website-projekter gennem min skoletid og kodningskurser, og 
 
 <div class="service">
 <h3>Professionelle Websites</h3>
-<p>Hurtige, moderne og responsive hjemmesider.</p>
+<p>Moderne, hurtige og responsive hjemmesider bygget fra bunden.</p>
 </div>
 
 <div class="service">
 <h3>Flotte Visuals</h3>
-<p>Premium design, animationer og stærk visuel præsentation.</p>
+<p>Rent, professionelt design der skaber et stærkt førstehåndsindtryk.</p>
 </div>
 
 <div class="service">
-<h3>3D Integration</h3>
-<p>3D modeller, interaktive visuals og product viewers.</p>
+<h3>Performance & Struktur</h3>
+<p>Optimerede websites med hurtig loading og god brugeroplevelse.</p>
 </div>
 
 </div>
-</section>
-
-<!-- 3D VIEWER -->
-<section>
-<h2>3D Demo</h2>
-<div id="viewer"></div>
 </section>
 
 <!-- CONTACT -->
@@ -174,43 +171,16 @@ Jeg har lavet mange website-projekter gennem min skoletid og kodningskurser, og 
 </footer>
 
 <script>
-const scene=new THREE.Scene();
-const camera=new THREE.PerspectiveCamera(75,window.innerWidth/420,0.1,1000);
-const renderer=new THREE.WebGLRenderer({antialias:true});
-renderer.setSize(document.getElementById("viewer").clientWidth,420);
-document.getElementById("viewer").appendChild(renderer.domElement);
+const elements=document.querySelectorAll(".card,.service");
 
-const light=new THREE.HemisphereLight(0xffffff,0x444444,1);
-scene.add(light);
-
-camera.position.set(0,1.5,3);
-
-const loader=new THREE.GLTFLoader();
-loader.load("model.glb",gltf=>{
-scene.add(gltf.scene);
-},undefined,()=>{
-
-/* fallback cube */
-const geo=new THREE.BoxGeometry();
-const mat=new THREE.MeshNormalMaterial();
-const cube=new THREE.Mesh(geo,mat);
-scene.add(cube);
-
-function spin(){
-cube.rotation.x+=0.01;
-cube.rotation.y+=0.01;
-requestAnimationFrame(spin);
-renderer.render(scene,camera);
-}
-spin();
-return;
+function reveal(){
+elements.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-80) el.classList.add("show");
 });
-
-function animate(){
-requestAnimationFrame(animate);
-renderer.render(scene,camera);
 }
-animate();
+window.addEventListener("scroll",reveal);
+reveal();
 </script>
 
 </body>
