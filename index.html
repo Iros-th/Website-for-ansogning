@@ -3,90 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iros Raj Thapa | Web Developer</title>
+<title>Iros Raj Thapa — Web Developer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
-html{scroll-behavior:smooth}
-body{background:#f5f6f8;color:#111;overflow-x:hidden}
+:root{
+--bg:#f7f8fa;
+--text:#111;
+--muted:#6b7280;
+--card:#ffffff;
+--border:#e5e7eb;
+}
 
-/* GLASS NAVBAR */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* NAV */
 nav{
 position:fixed;top:0;width:100%;
+background:rgba(255,255,255,0.85);
 backdrop-filter:blur(10px);
-background:rgba(255,255,255,0.75);
-border-bottom:1px solid rgba(0,0,0,.06);
+border-bottom:1px solid var(--border);
 display:flex;justify-content:space-between;align-items:center;
-padding:18px 60px;z-index:1000;transition:.3s
+padding:18px 60px;z-index:1000
 }
-nav a{text-decoration:none;color:#111;margin-left:30px;font-weight:600;position:relative}
-nav a:after{
-content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:#111;transition:.3s
-}
-nav a:hover:after{width:100%}
+nav a{margin-left:28px;text-decoration:none;color:var(--text);font-weight:500}
 
 /* HERO */
 .hero{
 height:100vh;
-background:url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") center/cover no-repeat;
-display:flex;align-items:center;justify-content:center;text-align:center;color:white;
-position:relative
+background:url("https://images.unsplash.com/photo-1492724441997-5dc865305da7") center/cover no-repeat;
+display:flex;align-items:center;justify-content:center;
+text-align:center;color:white;position:relative
 }
 .hero::after{
 content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)
 }
-.hero-content{position:relative}
-.hero h1{font-size:3.2rem;letter-spacing:.5px}
-.hero p{margin-top:14px;font-size:1.2rem;opacity:.95}
+.hero-content{position:relative;max-width:800px}
+.hero h1{font-size:3.2rem;font-weight:600}
+.hero p{margin-top:16px;font-size:1.15rem;opacity:.95}
 
-/* SECTION */
-section{padding:110px 60px;max-width:1250px;margin:auto}
-h2{margin-bottom:25px;font-size:2rem}
+/* SECTIONS */
+section{max-width:1200px;margin:auto;padding:120px 60px}
+h2{font-size:2rem;margin-bottom:18px}
 
 /* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:35px
+gap:32px
 }
 
 /* CARD */
 .card{
-background:white;border-radius:14px;overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.06);
-transform:translateY(60px);opacity:0;
-transition:all .9s cubic-bezier(.2,.7,.2,1)
+background:var(--card);
+border:1px solid var(--border);
+border-radius:12px;
+padding:26px;
+transform:translateY(60px);
+opacity:0;
+transition:all .8s cubic-bezier(.2,.7,.2,1)
 }
 .card.show{transform:translateY(0);opacity:1}
-.card img{width:100%;height:210px;object-fit:cover}
-.card div{padding:24px}
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 18px 40px rgba(0,0,0,.12)
-}
-
-/* SERVICES */
-.service{
-background:white;padding:28px;border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
-transform:translateY(60px);opacity:0;
-transition:all .9s cubic-bezier(.2,.7,.2,1)
-}
-.service.show{transform:translateY(0);opacity:1}
-
-/* BUTTON */
-button{
-background:#111;color:white;border:none;
-padding:16px 30px;border-radius:8px;
-cursor:pointer;font-size:15px;transition:.25s
-}
-button:hover{background:#000;transform:translateY(-1px)}
+.card h3{margin-bottom:8px}
+.card p{color:var(--muted)}
 
 /* FOOTER */
 footer{
-text-align:center;padding:40px;background:#111;color:white;margin-top:70px
+text-align:center;padding:40px;
+background:#111;color:white;margin-top:60px
 }
 </style>
 </head>
@@ -94,61 +80,51 @@ text-align:center;padding:40px;background:#111;color:white;margin-top:70px
 <body>
 
 <nav>
-<b>Iros</b>
+<b>Iros Raj Thapa</b>
 <div>
-<a href="#about">Om</a>
-<a href="#projects">Projekter</a>
+<a href="#about">About</a>
+<a href="#projects">Work</a>
 <a href="#services">Services</a>
-<a href="#contact">Kontakt</a>
+<a href="#contact">Contact</a>
 </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero" id="hero">
 <div class="hero-content">
-<h1>Professional Web Developer</h1>
-<p>Moderne • Hurtige • Visuelt stærke hjemmesider</p>
+<h1>Building Modern, High-Quality Websites</h1>
+<p>Performance • Clean Design • Professional Results</p>
 </div>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
-<h2>Om mig</h2>
+<h2>About</h2>
 <p>
-Jeg udvikler professionelle hjemmesider med fokus på design, performance og brugeroplevelse.
-Jeg har bygget mange webprojekter gennem min skoletid og kodningskurser og leverer komplette,
-professionelle løsninger fra idé til færdigt produkt.
+I design and develop modern, professional websites focused on performance, usability and clean visual presentation.
+I have built multiple website projects throughout my education and coding courses, and I deliver complete solutions from concept to finished product.
 </p>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-<h2>Udvalgte Projekter</h2>
+<h2>Selected Work</h2>
 
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6">
-<div>
-<h3>Enterprise Website System</h3>
-<p>Professionel virksomhedshjemmeside med høj performance og moderne design.</p>
-</div>
+<h3>Enterprise Web Platform</h3>
+<p>Scalable, high-performance website architecture with modern UI and optimized loading.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
-<div>
-<h3>Advanced Web Platform</h3>
-<p>Skalerbar webapplikation med dynamisk funktionalitet.</p>
-</div>
+<h3>Interactive Application</h3>
+<p>Dynamic web experience built with strong usability and structured front-end logic.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8">
-<div>
-<h3>Professional UI System</h3>
-<p>Designsystem med fokus på brugeroplevelse og visuel kvalitet.</p>
-</div>
+<h3>Design System</h3>
+<p>Clean and consistent UI framework focused on user experience and visual clarity.</p>
 </div>
 
 </div>
@@ -156,23 +132,23 @@ professionelle løsninger fra idé til færdigt produkt.
 
 <!-- SERVICES -->
 <section id="services">
-<h2>Hvad jeg kan lave for jer</h2>
+<h2>Services</h2>
 
 <div class="grid">
 
-<div class="service">
-<h3>Premium Websites</h3>
-<p>Moderne, responsive og professionelle hjemmesider bygget fra bunden.</p>
+<div class="card">
+<h3>Professional Websites</h3>
+<p>Modern, responsive, production-ready web solutions.</p>
 </div>
 
-<div class="service">
-<h3>Visual Excellence</h3>
-<p>Rent, professionelt design med stærk visuel identitet.</p>
+<div class="card">
+<h3>Visual & UX</h3>
+<p>Clean, structured and visually strong design implementation.</p>
 </div>
 
-<div class="service">
-<h3>Performance & Optimization</h3>
-<p>Hurtige, optimerede websites med god struktur og brugeroplevelse.</p>
+<div class="card">
+<h3>Performance Optimization</h3>
+<p>Fast loading, efficient rendering and optimized architecture.</p>
 </div>
 
 </div>
@@ -180,9 +156,8 @@ professionelle løsninger fra idé til færdigt produkt.
 
 <!-- CONTACT -->
 <section id="contact">
-<h2>Kontakt</h2>
-<p>Klar til at bygge jeres næste professionelle hjemmeside.</p>
-<button onclick="alert('Kontakt: Iros Raj Thapa')">Kontakt mig</button>
+<h2>Contact</h2>
+<p>Available for web development work and professional projects.</p>
 </section>
 
 <footer>
@@ -190,10 +165,34 @@ professionelle løsninger fra idé til færdigt produkt.
 </footer>
 
 <script>
-const items=document.querySelectorAll(".card,.service");
+/* ULTRA SMOOTH SCROLL ENGINE */
+let targetY=window.scrollY;
+let currentY=window.scrollY;
+const ease=0.08;
+
+function smoothScroll(){
+currentY+= (targetY-currentY)*ease;
+window.scrollTo(0,currentY);
+requestAnimationFrame(smoothScroll);
+}
+smoothScroll();
+
+window.addEventListener("wheel",e=>{
+targetY+=e.deltaY;
+targetY=Math.max(0,Math.min(targetY,document.body.scrollHeight-window.innerHeight));
+});
+
+/* PARALLAX HERO */
+window.addEventListener("scroll",()=>{
+const hero=document.getElementById("hero");
+hero.style.backgroundPositionY=window.scrollY*0.4+"px";
+});
+
+/* REVEAL ANIMATION */
+const cards=document.querySelectorAll(".card");
 
 function reveal(){
-items.forEach(el=>{
+cards.forEach(el=>{
 const top=el.getBoundingClientRect().top;
 if(top<window.innerHeight-80) el.classList.add("show");
 });
